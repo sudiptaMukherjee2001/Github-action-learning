@@ -10,3 +10,9 @@ jobs:
     steps:
       - name: Print message
         run: echo "Hello Sudipto"
+   hello2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        run: echo "Hello Sudipto mukhjerjee"
