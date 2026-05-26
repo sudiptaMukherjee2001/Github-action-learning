@@ -10,8 +10,8 @@ jobs:
 
     steps:
       - name: Print message
-        run: echo "build stage is running"
-        run 
+        run: echo "build stage is running"  // this is refer as step and inside step we are having multiple command to run . execute shell command inside runner
+        
 
   test_stage:
     runs-on: ubuntu-latest
@@ -22,3 +22,7 @@ jobs:
 
 
 2. now we will understand the dependency of stage  by using needs keyword
+
+3. i have noticed that piplined failed because of wrong key word and we use need keyword in test stage and test stage will only run if build stage has passed sucessfuly but here build stage fails so test stage has not started .. now i comment out the need part and run the pipeline then i saw build was fail because of wrong cmd but test stage has successfuly run ...
+
+4. need mainly create the pipeline order.
