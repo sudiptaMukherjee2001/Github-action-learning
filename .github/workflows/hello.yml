@@ -5,13 +5,13 @@ on:
 
 jobs: # this is also refer as stages - inside stages we are having multiple stage such as build stage, test stage, deploy stage
   build_stage: #This is also refer as first stage or job
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # this is refer as runner means in this stage will run - we can use windows-latest, macos-latest, ubuntu-latest
 
     steps:
       - name: Print message
         run: echo "build stage is running"
   test_stage: ##This is also refer as second stage or job
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # this is refer as runner means in this stage will run - we can use windows-latest, macos-latest, ubuntu-latest
 
     steps:
       - name: Print message
