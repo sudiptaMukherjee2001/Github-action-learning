@@ -1,0 +1,24 @@
+1. First understand the basic workflow of github action stucture
+name: First Workflow
+
+on:
+  push:
+
+jobs:
+  build_stage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        run: echo "build stage is running"
+        run 
+
+  test_stage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        run: echo "test stage is running"
+
+
+2. now we will understand the dependency of stage  by using needs keyword
