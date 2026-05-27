@@ -23,6 +23,20 @@ jobs: # this is also refer as stages - inside stages we are having multiple stag
         uses: actions/setup-node@v4
         with:
           node-version: 18
+      - name: Check current user
+        run: whoami
+
+      - name: Check current directory
+        run: pwd
+
+      - name: List files
+        run: ls -la
+
+      - name: Check node version
+        run: node --version
+
+      - name: Check npm version
+        run: npm --version
   test_stage: #JOB- 2 . This is also refer as second stage or job
     needs: build_stage # this is refer as dependency means this stage will run after build stage
     runs-on: ubuntu-latest # this is refer as runner means in this stage will run - we can use windows-latest, macos-latest, ubuntu-latest
