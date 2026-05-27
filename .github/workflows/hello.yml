@@ -16,6 +16,13 @@ jobs: # this is also refer as stages - inside stages we are having multiple stag
         run: pwd
       - name: list all files - step 3
         run : ls -la
+        #Set up node environment 
+      - name: checking runnner node version - step 4
+        run: node --version
+      - name: set up node - step 5
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
   test_stage: #JOB- 2 . This is also refer as second stage or job
     #needs: build_stage # this is refer as dependency means this stage will run after build stage
     runs-on: ubuntu-latest # this is refer as runner means in this stage will run - we can use windows-latest, macos-latest, ubuntu-latest
