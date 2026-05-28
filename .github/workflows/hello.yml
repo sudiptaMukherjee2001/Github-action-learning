@@ -4,39 +4,46 @@ on:
   push:
 
 jobs: # this is also refer as stages - inside stages we are having multiple stage such as build stage, test stage, deploy stage
-  build_stage: #JOB-1 . This is also refer as first stage or job
+  build_stage: #JOB-1 . This is also refer as first stage or jobtree
     runs-on: ubuntu-latest  # this is refer as runner means in this stage will run - we can use windows-latest, macos-latest, ubuntu-latest
 
     steps:
       - name: Checkout repository - step 0
         uses: actions/checkout@v4
+
       - name: Print message - step 1
         run: echo "build stage is running"
+
       - name: Print current directory - step 2
         run: pwd
+
       - name: list all files - step 3
         run : ls -la
+
         #Set up node environment 
       - name: checking runnner node version - step 4
         run: node --version
+
       - name: set up node - step 5
         uses: actions/setup-node@v4
         with:
           node-version: 18
-      - name: Check current user
+
+      - name: Check current user - step 6
         run: whoami
 
-      - name: Check current directory
+      - name: Check current directory - step 7
         run: pwd
 
-      - name: List files
+      - name: List files  - step 8
         run: ls -la
 
-      - name: Check node version
+      - name: Check node version - step 9
         run: node --version
 
-      - name: Check npm version
+      - name: Check npm version - step 10
         run: npm --version
+
   test_stage: #JOB- 2 . This is also refer as second stage or job
     needs: build_stage # this is refer as dependency means this stage will run after build stage
     runs-on: ubuntu-latest # this is refer as runner means in this stage will run - we can use windows-latest, macos-latest, ubuntu-latest

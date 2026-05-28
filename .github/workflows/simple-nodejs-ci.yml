@@ -1,0 +1,33 @@
+name: Simple Node.js CI
+on:
+    push:
+        paths:
+            - 'simple-nodejs-ci.yml/**'
+jobs:
+    build_stage:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: 18
+
+            - name: Install dependencies
+              run: npm install
+
+    test_stage:
+        needs: build_stage
+        runs-on: ubuntu-latest
+        steps:
+            - name: Run tests
+              run: npm test
+    
+    run_stage:
+        needs: test_stage
+        runs-on: ubuntu-latest
+        steps:
+            - name: Run application
+              run: npm start
