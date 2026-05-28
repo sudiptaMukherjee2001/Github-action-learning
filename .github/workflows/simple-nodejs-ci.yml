@@ -2,7 +2,7 @@ name: Simple Node.js CI
 on:
     push:
         paths:
-            - 'simple-nodejs-ci.yml/**'
+            - 'simple-nodejs-ci/**'
 jobs:
     build_stage:
         runs-on: ubuntu-latest
