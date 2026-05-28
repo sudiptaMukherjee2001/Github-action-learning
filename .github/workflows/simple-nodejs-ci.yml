@@ -27,11 +27,11 @@ jobs:
         steps:
             - name: Run tests
               run: npm test
-              working-directory: simple-nodejs-ci/
+              working-directory: simple-nodejs-ci/*
     run_stage:
         needs: test_stage
         runs-on: ubuntu-latest
         steps:
             - name: Run application
               run: npm start
-              working-directory: simple-nodejs-ci/
+              working-directory: simple-nodejs-ci/*
