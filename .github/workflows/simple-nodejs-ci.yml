@@ -19,7 +19,7 @@ jobs:
             # STEP LEVEL ENVIRONMENT VARIABLES
             - name: checking my STEP level environment variable
               env:
-                STEP_NAME: Checkout repository
+                STEP_NAME: step level variable
               run: echo $STEP_NAME
                 
             - name: Checkout repository
