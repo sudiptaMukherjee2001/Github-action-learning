@@ -17,8 +17,9 @@ jobs:
                 node-version: 18
 
             - name: Install dependencies
-              run: npm install
+              run: npm install && pwd
               working-directory: ./simple-nodejs-ci
+              
 
     test_stage:
         needs: build_stage
@@ -26,10 +27,11 @@ jobs:
         steps:
             - name: Run tests
               run: npm test
-    
+              working-directory: ./simple-nodejs-ci
     run_stage:
         needs: test_stage
         runs-on: ubuntu-latest
         steps:
             - name: Run application
               run: npm start
+              working-directory: ./simple-nodejs-ci
