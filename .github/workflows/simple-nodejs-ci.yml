@@ -17,6 +17,7 @@ jobs:
 
             - name: Install dependencies
               run: npm install
+              working-directory: ./simple-nodejs-ci
 
     test_stage:
         needs: build_stage
