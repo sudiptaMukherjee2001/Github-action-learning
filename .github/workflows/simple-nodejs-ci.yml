@@ -1,13 +1,19 @@
 name: Simple Node.js CI
+#WORK F LOW LEVEL ENVIRONMENT VARIABLES
+env:
+    APP_NAME: Simple-Node.js-CI
 on:
     push:
         paths:
             - 'simple-nodejs-ci/**'
-            - '.github/workflows/simple-nodejs-ci.yml'
+            - '.github/workflows/simple-nodejs-ci.yml' # path based trigger for workflow file changes
 jobs:
     ci_pipeline_stage:
         runs-on: ubuntu-latest
         steps:
+            - name: checking my workflow level environment variable
+              run: echo $APP_NAME
+
             - name: Checkout repository
               uses: actions/checkout@v4
 
