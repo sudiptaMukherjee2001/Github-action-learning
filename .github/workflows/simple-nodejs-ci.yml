@@ -3,6 +3,7 @@ on:
     push:
         paths:
             - 'simple-nodejs-ci/**'
+            - 'simple-nodejs-ci.yml'
 jobs:
     build_stage:
         runs-on: ubuntu-latest
