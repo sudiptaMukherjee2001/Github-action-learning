@@ -22,8 +22,8 @@ jobs:
             
             - name: Run tests
               run: npm test
-              #working-directory: simple-nodejs-ci/
+              working-directory: simple-nodejs-ci/
 
             - name: start application
               run: npm start
-              #working-directory: simple-nodejs-ci/
+              working-directory: simple-nodejs-ci/
