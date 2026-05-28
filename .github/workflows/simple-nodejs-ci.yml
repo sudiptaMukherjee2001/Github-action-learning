@@ -1,5 +1,5 @@
 name: Simple Node.js CI
-#WORK F LOW LEVEL ENVIRONMENT VARIABLES
+#WORK FLOW LEVEL ENVIRONMENT VARIABLES
 env:
     APP_NAME: Simple-Node.js-CI
 on:
@@ -9,13 +9,24 @@ on:
             - '.github/workflows/simple-nodejs-ci.yml' # path based trigger for workflow file changes
 jobs:
     ci_pipeline_stage:
+        #JOB LEVEL ENVIRONMENT VARIABLES - not used or created in this workflow but can be used in future if needed
         runs-on: ubuntu-latest
         steps:
+            #CHECKING WORKFLOW LEVEL ENVIRONMENT VARIABLE
             - name: checking my workflow level environment variable
               run: echo $APP_NAME
-
+              
+            # STEP LEVEL ENVIRONMENT VARIABLES
+            - name: checking my STEP level environment variable
+              env:
+                STEP_NAME: Checkout repository
+              run: echo $STEP_NAME
+                
             - name: Checkout repository
               uses: actions/checkout@v4
+            
+            - name: we are checking do we have access of step level variable in other step or not
+              run: echo $STEP_NAME
 
             - name: Set up Node.js
               uses: actions/setup-node@v4
